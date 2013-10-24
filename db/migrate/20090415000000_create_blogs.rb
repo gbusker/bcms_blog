@@ -1,3 +1,4 @@
+# This migration comes from bcms_blog (originally 20090415000000)
 require 'pp'
 
 Cms::Page # trigger auto-loading
@@ -18,7 +19,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.text :template
     end
     
-    create_table :blog_group_memberships do |t|
+    create_table prefix(:blog_group_memberships) do |t|
       t.integer :blog_id
       t.integer :group_id
     end
@@ -36,9 +37,8 @@ class CreateBlogs < ActiveRecord::Migration
     Cms::ContentType.destroy_all(:name => "Blog")
     Cms::Connector.destroy_all(:connectable_type => "Blog")
 
-    drop_table :blog_versions
-    drop_table :blogs
+    drop_versioned_table :blogs
 
-    drop_table :blog_group_memberships
+    drop_table prefix(:blog_group_memberships)
   end
 end

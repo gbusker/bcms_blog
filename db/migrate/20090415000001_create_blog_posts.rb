@@ -1,3 +1,4 @@
+# This migration comes from bcms_blog (originally 20090415000001)
 class CreateBlogPosts < ActiveRecord::Migration
   def self.up
     create_versioned_table :blog_posts do |t|
@@ -15,7 +16,6 @@ class CreateBlogPosts < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :blog_post_versions
-    drop_table :blog_posts
+    drop_versioned_table :blog_posts
   end
 end

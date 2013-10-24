@@ -1,3 +1,4 @@
+# This migration comes from bcms_blog (originally 20120529184028)
 require 'cms/upgrades/v3_5_0'
 
 # Upgrade this module to v1.3.0 of BcmsBlog (Rails 3.2/CMS 3.5.x compatible)
