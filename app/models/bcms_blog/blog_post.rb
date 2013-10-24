@@ -1,5 +1,5 @@
 module BcmsBlog
-  class BlogPost < ActiveRecord::Base
+  class BlogPost < BcmsBlog
     acts_as_content_block :taggable => true
 
     has_attachment :file

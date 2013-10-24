@@ -1,5 +1,5 @@
 module BcmsBlog
-  class BlogObserver < ActiveRecord::Observer
+  class BlogObserver < BcmsBlog
   
     def after_create(blog)
       @blog = blog

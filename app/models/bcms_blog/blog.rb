@@ -1,5 +1,5 @@
 module BcmsBlog
-  class Blog < ActiveRecord::Base
+  class Blog < BcmsBlog
     acts_as_content_block
   
     has_many :posts, :class_name => "BlogPost", :conditions => { :published => true }, :order => "published_at desc"

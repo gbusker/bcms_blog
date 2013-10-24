@@ -1,5 +1,5 @@
 module BcmsBlog
-  class BlogComment < ActiveRecord::Base
+  class BlogComment < BcmsBlog
     acts_as_content_block :is_searachable => "body"
     belongs_to :post, :class_name => "BlogPost", :counter_cache => "comments_count"
 
